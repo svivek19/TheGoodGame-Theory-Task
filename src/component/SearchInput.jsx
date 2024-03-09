@@ -1,6 +1,7 @@
+// SearchInput.jsx
 import React, { useState } from "react";
 
-const SearchInput = ({ data, setData }) => {
+const SearchInput = ({ originalData, setData }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e) => {
@@ -8,18 +9,20 @@ const SearchInput = ({ data, setData }) => {
     setSearchQuery(inputValue);
 
     if (inputValue === "") {
-      // If input is empty, reset data to the original data immediately
-      setData(data);
+      // If input is empty, reset data to its original state
+      resetData();
     } else {
-      // Otherwise, filter the data after a delay
-      setTimeout(() => {
-        filterData(inputValue);
-      }, 3000);
+      // Otherwise, filter the data immediately
+      filterData(inputValue);
     }
   };
 
+  const resetData = () => {
+    setData(originalData);
+  };
+
   const filterData = (query) => {
-    const filteredData = data.filter((item) =>
+    const filteredData = originalData.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
     setData(filteredData);
@@ -31,7 +34,7 @@ const SearchInput = ({ data, setData }) => {
         <input
           type="search"
           placeholder="Search Items..."
-          className="bg-gray-200 font-semibold outline-none p-2 w-2/6 rounded"
+          className="bg-gray-200 font-semibold outline-none p-2 w-full md:w-2/6 rounded"
           value={searchQuery}
           onChange={handleSearch}
         />
