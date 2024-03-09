@@ -2,10 +2,10 @@ import React from "react";
 
 const Card = ({ data }) => {
   return (
-    <div className="w-5/6 mx-auto grid grid-cols-3 gap-4">
+    <div className="mx-auto w-5/6 grid grid-cols-1 md:grid-cols-3 md:gap-4">
       {data.map((beer, index) => (
         <div className="p-4" key={index}>
-          <div className="w-5/6 rounded overflow-hidden shadow-lg">
+          <div className="md:w-5/6 rounded overflow-hidden shadow-lg">
             <img
               className="w-full h-64 object-cover"
               src={beer.image_url}
