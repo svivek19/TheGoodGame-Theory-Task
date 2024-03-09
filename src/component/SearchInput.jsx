@@ -1,4 +1,3 @@
-// SearchInput.jsx
 import React, { useState } from "react";
 
 const SearchInput = ({ originalData, setData }) => {

@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useEffect, useState } from "react";
 import Navbar from "./component/Navbar";
 import SearchInput from "./component/SearchInput";
