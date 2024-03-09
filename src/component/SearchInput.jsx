@@ -1,5 +1,7 @@
 import React from "react";
 
+// https://api.punkapi.com/v2/beers
+
 const SearchInput = () => {
   return (
     <div className="w-5/6 mx-auto my-10 text-center">
