@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <SearchInput />
+      <SearchInput data={data} setData={setData} />
       <Card data={data} />
     </>
   );
